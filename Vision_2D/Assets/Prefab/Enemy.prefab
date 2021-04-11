@@ -130,13 +130,13 @@ MonoBehaviour:
   m_FalloffIntensity: 0.876
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_LightVolumeOpacity: 0
+  m_LightVolumeOpacity: 0.502
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
+  m_ShadowIntensity: 1
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 43
   m_PointLightOuterAngle: 146
@@ -226,10 +226,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5151668470626689774}
   bodyCollider: {fileID: 5151668470626689769}
+  FOV: {fileID: 5151668470695567105}
+  Player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
   wallLayer:
     serializedVersion: 2
     m_Bits: 8
+  patrolLayer:
+    serializedVersion: 2
+    m_Bits: 64
   walkSpeed: 150
+  manager: {fileID: 0}
 --- !u!61 &5151668470626689769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,7 +252,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1266995, y: 0}
+  m_Offset: {x: 0.1266995, y: -0.035371542}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -254,7 +263,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.253399, y: 1}
+  m_Size: {x: 1.253399, y: 0.78777075}
   m_EdgeRadius: 0
 --- !u!1 &5151668470656232966
 GameObject:
@@ -301,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 1
+  m_FalloffIntensity: 0.98
   m_Color: {r: 0.25943398, g: 0.7238567, b: 1, a: 1}
   m_Intensity: 1.86
   m_LightVolumeOpacity: 0
@@ -373,7 +382,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
+  m_Offset: {x: 0.5, y: 0.10332477}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -384,7 +393,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 2, y: 1.9414046}
   m_EdgeRadius: 0
 --- !u!212 &5151668470695567104
 SpriteRenderer:
@@ -393,7 +402,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5151668470695567110}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

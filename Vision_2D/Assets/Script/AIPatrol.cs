@@ -8,8 +8,13 @@ public class AIPatrol : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Collider2D bodyCollider;
+    public Collider2D FOV;
+    public GameObject Player;
+    public LayerMask playerLayer;
     public LayerMask wallLayer;
+    public LayerMask patrolLayer;
     public float walkSpeed;
+    [SerializeField] private GameManager manager;
 
     // Update is called once per frame
     void Update()
@@ -19,9 +24,14 @@ public class AIPatrol : MonoBehaviour
 
     void Patrol()
     {
-        if(bodyCollider.IsTouchingLayers(wallLayer))
+        if(bodyCollider.IsTouchingLayers(wallLayer) || bodyCollider.IsTouchingLayers(patrolLayer))
         {
             Flip();
+        }
+
+        if (FOV.IsTouchingLayers(playerLayer))
+        {
+            manager.RespawnPlayer();
         }
         //Movement
         rb.velocity = new Vector2(walkSpeed * Time.fixedDeltaTime, rb.velocity.y);
