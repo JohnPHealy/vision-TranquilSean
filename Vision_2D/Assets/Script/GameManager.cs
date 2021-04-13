@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void Teleport(Vector3 newPos)
+    {
+        player.transform.position = newPos;
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0;
