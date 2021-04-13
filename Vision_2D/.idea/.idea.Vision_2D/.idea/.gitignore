@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.Vision_2D.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\college\Github\vision-TranquilSean\Vision_2D\.idea\.idea.Vision_2D\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
