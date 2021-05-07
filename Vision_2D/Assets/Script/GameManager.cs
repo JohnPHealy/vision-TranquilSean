@@ -8,26 +8,58 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private UnityEvent<string> addKey;
+    [SerializeField] private UnityEvent<string> addGold;
+    [SerializeField] private UnityEvent<string> addRed;
+    [SerializeField] private UnityEvent<string> addBlue;
+    [SerializeField] private UnityEvent<string> addGreen;
     private Vector3 startPos;
-    public static  int keyNum;
+    public static  int keyNum, numBlue, numGreen, numGold, numRed;
 
     private void Start()
     {
         startPos = player.transform.position;
-        keyNum = 0;
+        numBlue = 0;
+        numGreen = 0;
+        numGold =0;
+        numRed = 0;
         UpdateUI();
-        //PauseGame();
+        PauseGame();
 
     }
     
-    public void PickupKey()
+    public void PickupKey(int num)
     {
-        keyNum += 1;
+        keyNum += num;
+        UpdateUI();
+    }
+
+    public void PickupKeyGold(int num)
+    {
+        numGold += num;
+        UpdateUI();
+    }
+    public void PickupKeyRed(int num)
+    {
+        numRed += num;
+        UpdateUI();
+    }
+    public void PickupKeyBlue(int num)
+    {
+        numBlue += num;
+        UpdateUI();
+    }
+    public void PickupKeyGreen(int num)
+    {
+        numGreen += num;
         UpdateUI();
     }
     private void UpdateUI()
     {
         addKey.Invoke(keyNum.ToString());
+        addGold.Invoke(numGold.ToString());
+        addRed.Invoke(numRed.ToString());
+        addBlue.Invoke(numBlue.ToString());
+        addGreen.Invoke(numGreen.ToString());
         
     }
     public void Checkpoint()

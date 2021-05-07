@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TeleportPlayer : MonoBehaviour
 {
+    [SerializeField] private GameManager manager;
     public GameObject player;
     public Transform teleportDestination;
 
@@ -13,6 +14,7 @@ public class TeleportPlayer : MonoBehaviour
         if (other.gameObject.name == player.gameObject.name)
         {
             player.transform.position = teleportDestination.position;
+            manager.Checkpoint();
         }
     }
 }
